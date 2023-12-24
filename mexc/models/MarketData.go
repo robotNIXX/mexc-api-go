@@ -133,4 +133,43 @@ type TickerPriceChangeStatisticsResponse struct {
 }
 
 // Symbol Price Ticker
-// api/v3/ticker/price
+///api/v3/ticker/price
+
+type SymbolPriceTicker struct {
+	Symbol string `json:"symbol"`
+	Price  string `json:"price"`
+}
+
+type SymbolPricesTicker struct {
+	_ []SymbolPriceTicker
+}
+
+type SymbolPriceTickerResponse struct {
+	_ SymbolPriceTicker
+}
+
+type SymbolPricesTickerResponse struct {
+	_ SymbolPricesTicker
+}
+
+// Symbol Order Book Ticker
+// /api/v3/ticker/bookTicker
+type SymbolOrderBookTicker struct {
+	Symbol   string `json:"symbol"`
+	BidPrice string `json:"bidPrice"`
+	BidQty   string `json:"bidQty"`
+	AskPrice string `json:"askPrice"`
+	AskQty   string `json:"askQty"`
+}
+
+type SymbolOrderBookTickers struct {
+	_ []SymbolOrderBookTicker
+}
+
+type SymbolOrderBookTickerResponse struct {
+	_ SymbolOrderBookTicker
+}
+
+type SymbolOrderBookTickersResponse struct {
+	_ SymbolOrderBookTickers
+}
